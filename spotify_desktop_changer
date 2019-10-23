@@ -1,0 +1,9 @@
+fetcher = urllib2.build_opener()
+searchTerm = 'parrot'
+startIndex = 0
+searchUrl = "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=" + searchTerm + "&start=" + startIndex
+f = fetcher.open(searchUrl)
+deserialized_output = simplejson.load(f)
+
+for i in deserialized_output:
+    print(i)
